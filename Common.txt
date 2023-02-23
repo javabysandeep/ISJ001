@@ -9,3 +9,15 @@ Introduction Of All
       name priya kumari 
        address :pune baner
       contact: 9304721240
+
+
+
+	name Ajay Varade
+	adress jalgaon
+	contact 7709646079
+
+
+	Name- Aditi Tarode
+	Address: Hadpsar
+	contact: 9130137195
+
