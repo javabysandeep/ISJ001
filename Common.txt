@@ -11,13 +11,13 @@ Introduction Of All
       contact: 9304721240
 
 
-<<<<<<< HEAD
+
 	name Ajay Varade
 	adress jalgaon
 	contact 7709646079
 
-=======
+
 	Name- Aditi Tarode
 	Address: Hadpsar
 	contact: 9130137195
->>>>>>> caf88bdf811dac880a72009f701026cbc6838845
+
