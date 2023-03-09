@@ -1,0 +1,110 @@
+What is Java?
+- It is a high level programming language.
+
+What is a Program?
+    - set of instructioins to perform certain task given to the computer.
+
+    multiplication of two numbers:
+        19898989898989989 * 17688638277778678
+
+what is a software?
+    - it is a group of meaningful programs together.
+
+Types of Software:
+    1. System software : OS, Drivers
+    2. Application software
+        - desktop/standalone Application
+            e.g. Calculator, Notepad, Excel
+            - to access desktop apps we don't need internet.
+            - to develop desktop apps we can use : AWT/SWING/JavaFX
+
+        - web Application
+            e.g. youtube, facebook
+            - we need internet to access web Application
+            -Theses are the Application software which runs on web server[Remote machine]
+            - web Application run on a single remote machine
+            - to develop web Application we can use:
+                - Servlet, JSP, Spring MVC,
+
+        - enterprise Application/Distibuted Application:
+            e.g. internet banking, irctc, ERP System
+            - we need internet to access enterprise Application
+            - these apps run on multiple machines as they are big in nature.
+            - to develop enterprise apps we can use: SOAP/REST web services, Spring REST
+
+# Why to use Java?/ Features of Java
+1. using Java we can develop Application software
+2. We have large community support.
+3. Platform independent: software compiled on one machine and that can run on any machine
+4. WORA: Write Once Run Anywhere.
+     ** C,C++ are platform dependent: C program compiled on windows machine will only run on windows machine
+5. Multithread : running multiple blocks of code at the same time.
+6. Simple: it is simple as compared C, C++ since most of the complex concepts were removed in Java
+7. Secure: 
+    - it does not provide direct memory access to the developer.
+    - it provides several security managers
+    - memory allocation and deallocation is autmatically done by java. Developer is not responsible.
+8. Distibuted: with the help of java we can develop distributed Applications
+9. Java is strongly typed programming language.
+10. Java is a case sensitive programming language
+
+
+# Variables :
+    - It is a name given to a memory location address so that accessing the value from memory becomes easy.
+    e.g. int age = 100;
+
+
+# Data type:
+    - it specifies the type data stored in the memory container
+    - It specifies the size of container[memory requirement]
+    - It specifies the range of allowed values
+        e.g. in one byte we can store maximum of 127 value.
+
+# what are the data types available in java?
+    - byte, short, int, long [Non-floating or whole number -2,-1, 0,1,2]
+    - float, double [floating data or decimal e.g. 10.3F,104.65D]
+    - char ['A','B']
+    - boolean [true, false]
+
+
+# Identifier:
+    - It is a name given to a variable, method, class, packages
+
+    Rules:
+        - Allowed set of characters: A-Z, a-z, 0-9,$, _
+        - Should not start with digit.
+        - keywords are not allowed
+    
+    Suggestions/Good naming conventions for Identifier:
+        1. We should not use pre-defined class names as Identifier
+        2. Upper Camel case naming convention for classes :
+            - e.g. MessageService, LoginController, ProductController.
+        3. Lowe camel case naming convention for variables, methods, pacakages:
+            - e.g. int productQuantity = 100;
+                    int numberOfOrdersPlacedToday = 0;
+                
+# how to perform operations on given data?
+
+Arithemetic operations : +, -, *, /, %
+
+- If we try to divide the non-floating[byte, short, int, long, char] number by zero then we get ArithmeticException divide by zero.
+- If we try to divide the floating [float, double] number by zero then we get Infinity as a output
+- Arithemetic operations are not allowed for boolean type data.
+
+# + operator:
+    1. mathematical addition : when both the operands are of number type
+    2. String concatenation : when one of the operand is of String type.
+
+    Expression evaluatio will be done from left to right as per the BODMAS rule
+
+// Operand1       (+, -, *, /, %)        operand2  ----> Result type
+// (byte, short, int, char) (+, -, *, /, %) (byte, short, int, char) ---->  int
+// (byte, short, int, char, long) (+, -, *, /, %) (byte, short, int, char, long) ---->  long
+// (byte, short, int, char, long, float) (+, -, *, /, %) (byte, short, int, char, long, float) ---->  float
+// (byte, short, int, char, long, float, double) (+, -, *, /, %) (byte, short, int, char, long, float, double) ---->  double
+        
+        
+# Comparision Operators / Relational Operators
+- >, <, >=, <=,==, !=
+- for boolean data type only, == and != are applicable
+- output of Comparision operator is boolearn true or false
