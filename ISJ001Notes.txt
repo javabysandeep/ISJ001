@@ -2,7 +2,7 @@ What is Java?
 - It is a high level programming language.
 
 What is a Program?
-    - set of instructioins to perform certain task given to the computer.
+    - set of instructions to perform certain task given to the computer.
 
     multiplication of two numbers:
         19898989898989989 * 17688638277778678
