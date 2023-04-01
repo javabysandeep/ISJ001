@@ -26,7 +26,7 @@ public class Identity {
         // void saveStudentDetails(){}
         // void transferMoney(){}
     public static void main(String[] arguments) {
-        int public = 100;
+        int s = 100;
         System.out.println("Hello");
         
     }

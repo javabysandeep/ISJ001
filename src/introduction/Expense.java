@@ -1,9 +1,9 @@
 package introduction;
 
 class Expense {
-    addExpense(){}
+    /*addExpense(){}
     editExpense(){}
     deleteExpense(){}
-    getAllExpenses(){}
+    getAllExpenses(){}*/
 }
 

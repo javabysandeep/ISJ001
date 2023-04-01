@@ -108,3 +108,192 @@ Arithemetic operations : +, -, *, /, %
 - >, <, >=, <=,==, !=
 - for boolean data type only, == and != are applicable
 - output of Comparision operator is boolearn true or false
+
+#class components
+	1. variables :
+		# Variable
+		- it is a name given to memory location address
+		- using variable we can store the data
+		- syntax : data_type variableName = value;
+					 int productQuantity = 100;
+						- int : data type
+						- 100 : value of type integer
+						- productQuantity : name of the variable
+						- =  : assignment operator
+
+		# Types of variable based content:
+			- based on the content we have two typs variable:
+			1. Primitive variable :
+				- If a variable contains the value of type [byte, short, int, long, double, float, char, boolean]
+				- e.g.	 int productQuantity = 100;
+
+			2. Reference variable :
+					- If a variable contains a referene/address of an object
+				- e.g.	 Student student = new Student();
+						- Student : it is a name of the class. Custom data type
+						- student : it is a reference variable
+						- =  : assignment operator
+						- new  : it is a keyword
+						- Student(): It is a call given to the constructor in order to create the object
+
+						- new Student(); : It is an object
+
+# Types of variable based usage:
+	1. Local variable
+	2. Instance variable
+	3. static variable
+
+		1. Local variable:
+			- what it is ?
+					- It is a variable which is created inside the method, constructor, block without any access 						modifier
+			- why to use it?
+					- It is used to store the data which is temprary/ intermediate results
+
+			- how to access/use the local variable
+			    - we access local variables directly without any prefix or suffix
+
+            - Which memory area local variables are stored?
+                - Stack memory area
+
+            - When local variables will be created?
+                - when method is called
+
+            - When local variables will be deleted?
+                - when method execution is complete
+
+            - can we access the local variables outside the method/constructor?
+                    - No
+
+            - whether local variables will get the default value?
+                    - No
+                    - local variables must be initialized before they are used.
+# Instance variable:
+1. what is an instance variable?
+    - It is a variable which is created inside the class without static modifier and outside all other class components
+
+2. why to use instance variables?
+    - We use instance variables to store object specific data.
+
+3. how to create and access them?
+    - We create them inside the class
+        e.g.
+            public class Product {
+                 int productId;
+                 String productName;
+                 int productPrice;
+             }
+
+4. how many times instance variables will get the memory?
+    - everytime object is created.
+
+5. when instance variables will get the memory?
+    - instance variables will be created at the time object creation
+
+6. when instance variables will be deleted?
+    - when the object is deleted.
+
+7. whether instance variables will get the default value?
+    - Yes
+
+8. which memory area instance variables will be stored?
+    - HEAP memory area.
+
+
+# Static variable:
+1. what is a Static variable?
+    - It is a variable which is created inside the class with static modifier and outside all other class components
+
+2. why to use Static variables?
+    - We use Static variables to store common data for all the objects.
+
+3. how to create and access them?
+    - We create them inside the class
+    - We access static variables with the help of ClassName
+     -syntax : ClassName.staticVariableName
+
+        e.g.
+            public class Product {
+                 static String companyName = "ITC";
+             }
+
+4. how many times static variables will get the memory?
+    - only once at the of class loading in the memory.
+
+5. when static variables will get the memory?
+    - at the of class loading in the memory.
+
+6. when static variables will be deleted?
+    - when the class is unloaded from the memory.
+
+7. whether static variables will get the default value?
+    - Yes
+
+8. which memory area static variables will be stored?
+    - Class or Method memory area.
+
+9. Do we need to object to access static variables?
+    - No
+
+- We can access the static variables directly without class name in the same class but if the variable is in different class then we access it with class name
+
+- Even though we are accessing the static variable in the same class we should use classname.
+
+#To access the static variables from the same class we have
+1. directly without any name
+2. with the help of classname
+3. with the help of reference variable
+
+#To access the static variables from the outside class we have
+1. with the help of classname
+2. with the help of reference variable
+
+
+#To access the instance variables from the same class we have
+1. with the help of reference variable
+
+#To access the instance variables from the outside class we have
+1. with the help of reference variable
+
+
+
+
+What is a method?
+- it is a group of statements which are enclosed inside the curly braces
+  which has name, return type, may accept input also
+
+Types of method:
+1. instance method :
+    what it is :
+        - a method which is created without static modifier
+    why to use it:
+        - to represent object specific task/behaviour
+    how to access it?
+        - we need reference variable
+
+2. static method : a method which is created with static modifier
+
+*** We cannot define the methods inside another method/constructor/block
+We define method inside the class.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
