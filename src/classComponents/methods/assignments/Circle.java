@@ -1,4 +1,4 @@
-package classComponents.assignments;
+package classComponents.methods.assignments;
 
 import java.util.Scanner;
 

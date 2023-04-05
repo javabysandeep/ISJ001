@@ -1,4 +1,4 @@
-package classComponents.assignments;
+package classComponents.methods.assignments;
 
 public class Triangle {
     int side1;
