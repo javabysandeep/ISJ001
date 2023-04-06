@@ -276,17 +276,84 @@ Types of method:
 We define method inside the class.
 
 
+# this keyword:
+- What it is ?
+    - it is reference variable which refers to the current class object.
+
+- why to use this keyword?
+    1. we use this keyword to access current class instance variables, instance methods
+    2. we use this keyword to call the current class constructor
+
+# instance block
+- what it is?
+    - it is a block of code that is written inside the curly braces at class level outside of class components
+    - and which does not have name
+    - which does not accept parameters
+    - no return type
+    - without static keyword
+   - since it does not have name, we cannot call it explicitly.
+
+- when and how instance block will be executed?
+    - it will be executed automatically everytime we create an object of that class
+    - when we create an object it is guaranteed that instance block will be executed.
+
+- why to use instance blocks?
+    - we use instance blocks to write the non-initialization activity such as
+            - auditing, logging,
+            - maintaining the object counter
+    - it is guaranteed that instance block will be executed everytime object is created.
+
+# static block
+what is a static block?
+    - it is a block of code that is written inside the curly braces at class level outside of other class components
+    - with static keyword
+    - and which does not have name
+    - which does not accept parameters
+    - no return type
+- since it does not have name, we cannot call it explicitly.
+
+- when and how static block will be executed?
+    - it will be executed automatically when class is loaded in the memory
+    - it will be executed only once at the time of class loading
+
+- why to use static blocks?
+    - since static blocks will be executed only once at the time of class loading.
+    - we write code inside the static block such as one time activity
+        - loading the database drivers
+        - connecting to the server.
+
+5. nested classes
+- what is a nested class:
+    - A class which is defined inside another class
+
+- Different types of nested classes:
+ 1. static nested class
+    - what is static nested class?
+        - a class which is defined inside another class with static keyword.
+    - we can write both static and nonstatic members inside the static nested class.
+    - to create static nested class object we need outer classname.
+
+ 2. non-static nested class i.e. inner class: instance class
+  - what is non-static nested class or inner class?
+            - a class which is defined inside another class without static keyword.
+ - we cannot write static variables, static methods, static block inside the local inner class
+
+ - How to use inner class?
 
 
 
 
 
+3. local inner class
+     - what is local inner class?
+            - a class which is defined inside another method/block/constructor  without static keyword.
+    - we define local inner class inside the method/block/constructor and create objects inside the same method/block/constructor and use there itself.
+    - we cannot make local inner class as static
+    - we cannot write static variables, static methods, static block inside the local inner class
 
 
 
-
-
-
+4. anonymous class
 
 
 
