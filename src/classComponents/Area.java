@@ -18,6 +18,9 @@ public class Area {
     }
 
     public static void main(String[] args) {
+        {
+            //local block
+        }
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter length and breadth");
         int length = scanner.nextInt();

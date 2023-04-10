@@ -355,11 +355,51 @@ what is a static block?
 
 4. anonymous class
 
+# Access specifiers:
+	It specifies the visibility or scope of class and its components. Who can access them
+	We have different access specifier
+	1. public : it can be accessed througout application
+	2. private : within the same class
+	3. default : within the same package
+	4. protected : within the same package
 
+Note: Outer class cannot be private or protected.
 
+Q. Why to use access specifiers?
+Ans. To specify who can access the class and class components.
 
+Q.1 What is encapsulation in Java?
+Ans.	It is a process of binding data[instance variables] and methods[instance methods] which are acting on the same data.
 
+Q.2 How to implement Encapsulation in Java?
+	- We achieve encapsulation by
+		- making the data members i.e. instance variables private
+		- by accessing them with the help of public getter and setter methods
 
+Q.3 Why to use encapsulation? Advantages of encapsulation
+Ans.
+	1. we get better control on the data.
+	2. Data is safe. it cannot be accessed directly.
+
+Q.4 Drawbacks
+Ans.
+		1. Lenth of code increases.
+		2. program execution becomes slower.
+
+Example:
+			class Student {
+					private int id;
+					private String name;
+
+					//public setter
+					public void setId( int id ){ this.id = id;}
+					public void setName(String name ){ this.name = name;}
+
+					//public getters
+					public int getId(){ return id;}
+					public int getName(){ return name;}
+
+			}
 
 
 
