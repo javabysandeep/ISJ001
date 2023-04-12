@@ -1,4 +1,4 @@
-package oops;
+package oops.encapsulation;
 
 public class Person {
    private int age;

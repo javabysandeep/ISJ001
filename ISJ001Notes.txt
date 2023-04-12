@@ -383,7 +383,7 @@ Ans.
 
 Q.4 Drawbacks
 Ans.
-		1. Lenth of code increases.
+		1. Length of code increases.
 		2. program execution becomes slower.
 
 Example:
@@ -400,6 +400,102 @@ Example:
 					public int getName(){ return name;}
 
 			}
+
+
+
+Access Specifiers :  public, private, protected, default
+    - they specify the visibility of class and its components
+    - outer class can be public/default
+    - All access specifiers are applicable for class components
+    - public : it can be accessed throughout application
+    - private : it can be accessed only within the same class
+    - default : it can be accessed only within the same package
+    - protected : it can be accessed only within the same package plus sub-class
+
+     --> private <-- default --< protected --< public
+
+# Inheritance :
+- what is inheritance ?
+    - it is a process of acquiring non-private, non-static, non-final properties and methods from one object to another object.
+
+- Why to use inheritance?
+    - to achieve code usability
+
+- what is the type of relationship inheritance provides?
+    - IS- A
+    - Child class IS-A type of Parent class
+
+- How to implement/achieve inheritance in java?
+    - By using either extends or implements keyword
+    - We define parent class with common data and behaviour
+    - We create child class & use extends keyword
+
+- Source class from where another class inherits the members is called as Base Class/Super Class/Parent class
+- Child class/Subclass/Derived class
+
+
+# Types of inheritance
+1. Single level : one class extends only one another class
+      e.g.  class A{}
+            class B extends A{}
+        - it is supported in java through classes as well as interfaces
+
+2. Multi level : one class extends only one another class and that class extends another class and so on
+      e.g.  class A{}
+            class B extends A{}
+            class C extends B{}
+        - it is supported in java through classes as well as interfaces
+
+3. Cyclic Inheritance : one class extends itself
+      e.g.  class A extends A{}
+        - it is not supported in java through either classes or interfaces
+        - if we try to do it we get CTE
+
+4. Multiple Inheritance : one class extends more than one classes
+      e.g.
+            class A {}
+            class B {}
+            class C extends A, B {}//CTE
+
+        - it is not supported in java through classes
+        - if we try to do it with classes we get CTE
+        - but it is supported through interfaces
+
+- why multiple inheritance is not supported through classes in java?/ Diamond problem/ ambiguity/conflict/confusion
+    - When one class extends more than one classes then wih the inheritance it will acquire members from Parent class
+    - Then Child class will get confused which members to access.
+
+- How multiple inheritance is supported in Java?
+    - we can achieve multiple inheritance in java through interfaces.
+    - Since interfaces will have abstract methods and no Instance Variable, Instance Method, Instance Block, Constructor, Inner classes so there is no confusion
+
+
+Q. How to call Parent/Super class constructor from Child class?
+- In, Every Child class constructor, there is a call to the Parent class constructor even though we do not explicitly
+- If we want to explicitly call the super class constructor :  we use super();
+- call to the Constructor must be the first line in the given child class constructor
+
+
+* In multi level inheritance all the constructors from top to bottom will be executed if we create the object of bottom most class object.
+
+
+
+# What is cosmic class in Java?
+- Cosmic class has no further parent.
+- Object class is called as cosmic class in java
+- Object is present inside java.lang package
+- it is the Parent/Super class for all the predefined and user defined classes directly or indirectly.
+- After Object class there is no parent class.
+- Object class has some useful 11 methods for all the classes in java
+- extends Object is already added for the classes.
+
+
+
+
+
+
+
+
 
 
 
