@@ -456,10 +456,11 @@ Access Specifiers :  public, private, protected, default
             class A {}
             class B {}
             class C extends A, B {}//CTE
-
         - it is not supported in java through classes
         - if we try to do it with classes we get CTE
+
         - but it is supported through interfaces
+        One class can implement more than one interfaces.
 
 - why multiple inheritance is not supported through classes in java?/ Diamond problem/ ambiguity/conflict/confusion
     - When one class extends more than one classes then wih the inheritance it will acquire members from Parent class
@@ -476,8 +477,7 @@ Q. How to call Parent/Super class constructor from Child class?
 - call to the Constructor must be the first line in the given child class constructor
 
 
-* In multi level inheritance all the constructors from top to bottom will be executed if we create the object of bottom most class object.
-
+* In multi level inheritance all the constructors from top to bottom will be executed if we create the object of bottom most class.
 
 
 # What is cosmic class in Java?
@@ -488,7 +488,6 @@ Q. How to call Parent/Super class constructor from Child class?
 - After Object class there is no parent class.
 - Object class has some useful 11 methods for all the classes in java
 - extends Object is already added for the classes.
-
 
 
 
