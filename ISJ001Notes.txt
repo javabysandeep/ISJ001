@@ -489,6 +489,66 @@ Q. How to call Parent/Super class constructor from Child class?
 - Object class has some useful 11 methods for all the classes in java
 - extends Object is already added for the classes.
 
+# Interface :
+    1. it is a fully unimplemented class i.e. incomplete class
+    2. By default, variables are : public static final and they must be initialized
+    3. By default, methods are : public abstract
+    4. By default, nested classes are : public static
+
+# what is not allowed in an interface in java 8?
+    1. instance variable
+    2. instance method
+    3. instance block
+    4. inner class
+    5. Constructor
+    6. static block
+These all components are not allowed in an interface to avoid confusion for the subclass and achieve multiple inheritance.
+
+
+# what is  allowed in an interface in java 8?
+    1. static variables : by default are public static final and must be initialized
+    2. static method [new feature of JDK 8]
+    3. static nested class : nested classes are by default public static
+
+    4. abstract methods: by default methods are public abstract
+    5. default method[new feature of JDK 8]
+
+
+
+* When one concrete class implements an interface then it is compulsory to override all abstract methods from given Parent interface
+* When one abstract class implements an interface then it is optional to override all abstract methods from given Parent interface
+
+# Three valid use cases
+    1. one class extends another class : CEC
+    2. one class implements another interface : CII
+    3. one interface extends another interface: IEI
+
+- with interface we can achieve multiple inheritance
+
+* Since one interface extends another interface so Object class is not extended by interfaces in Java.
+* Object class methods are not available for interfaces.
+
+# Marker interface :
+    - An interface which is empty.
+    - some predefined marker interfaces: Cloneable, Serializable,
+
+# Functional Interface:
+    - An interface which contains Single Abstract method[SAM]
+    - Any number of static methods
+    - Any number of default methods.
+     - some predefined functional interfaces:
+         1. Comparator
+         2. Function
+         3. Predicate
+         4. Supplier
+         5. Consumer
+         6. Runnable
+@FunctionalInterface :
+    - @FunctionalInterface annotation is marked over the interface definition
+    - compiler checks that it meets function interface definition otherwise we get CTE
+
+
+
 
 
 
