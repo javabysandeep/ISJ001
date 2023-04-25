@@ -548,6 +548,37 @@ These all components are not allowed in an interface to avoid confusion for the 
     - compiler checks that it meets function interface definition otherwise we get CTE
 
 
+# Default methods
+	- it is a java 8 feature.
+	- We can write default methods only inside the interface from java 8
+
+	- it is a method which defined inside the  interface with method body[implementation] and with default keyword.
+
+	- it is similar to instance method but it is writtin with default keyword.
+
+	- AM, SM, DM
+
+	interface DummyService {
+			default void m1(){
+				SOUT(" default method");
+			}
+
+	}
+
+In java default specifies :
+	1. access specifier :default
+	2. default case in an switch statement
+	3. default method in java 8 interface.
+
+# What is lambda expression?
+	- It is an anonymous function which does not hav
+		- name
+		- return type
+		- access specifier
+		- access modifier
+
+# Why to use Lambda expression?
+	- we use it to implement only functional interfaces in a shorter, conceise way
 
 
 
