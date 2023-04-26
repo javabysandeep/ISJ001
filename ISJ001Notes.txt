@@ -580,6 +580,58 @@ In java default specifies :
 # Why to use Lambda expression?
 	- we use it to implement only functional interfaces in a shorter, conceise way
 
+#Lambda Expression
+
+Q. What it is ?
+	- It is an anonymous function/method which does not have
+			name, return type, access specifier, acess modifier
+
+Q. What is Functional Interface?
+	_ it is an interface which contains Single Abstract Method(SAM)
+
+Q. What are the different ways to implement functional interface?
+	1. Using named sub-class
+	2. Using anonymous class
+	3. Using Lambda Expression
+
+Q. Why to use Lambda expression?
+	- It is used to implement only functional interfaces.
+	- To implement functional interface in a shorter, consise way.
+
+Q. How to implement functional interface with the help of Lambda expression?
+
+interface DummyService {
+	void sendDummyMessage(String message);
+}
+
+class Test {
+	PSVM(){
+			DummyService dummyService =  (String message) -> {
+					SOUT("Sending message");
+			};
+			dummyService.sendDummyMessage("Hi");
+	}
+
+}
+
+# Disadvantages:
+	1. we cannot override the default methods in lambda expression
+	Note: By using named subclass and inline anonymous class we can override default methods
+
+	2. we can give only implementation for Functional interface and not for regular interfaces, not for abstract classes, concrete classes.
+
+1. What is the lambda expression in Java? Give syntax? () -> {}
+2. What are the characteristics of lambda expression?
+3. What are the features of lambda expression?
+4. What is functional interface?
+5. How lambda expression and functional interfaces are related?
+6. Explain various forms of writing lambda expression?
+7. What is method reference in java8 ?
+8. What do you understand by block lambda expression?
+9. Will lambda expression creates an object whenever it's executed?
+10. Give an example of recursive lambda expression?
+
+
 
 
 
