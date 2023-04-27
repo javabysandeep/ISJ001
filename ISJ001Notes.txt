@@ -632,6 +632,89 @@ class Test {
 10. Give an example of recursive lambda expression?
 
 
+Lambda Expression:
+ # It is anonymous function which does not name, return type, access specifier, access modifier
+
+# It is used to implement only functional interface.[SAM]
+# We can implement functional interfaces using
+	- named subclass
+	- using inline anonymous class
+	- using lambda expression
+	- using method reference
+
+- Using lambda expression we can implement functional interface in a shorter, concise way.
+# characteristics of lambda expression:
+		- optional lambda parameter data type  (int number)  -> {}
+		- optional curly braces : () -> System.out.println("Without curly braces");
+		- optional return statement: (x)-> x*x;
+
+# How to implement lambda exrepssion?
+	interface DummyService {
+			void service();
+	}
+
+	class App {
+
+		psvm(){
+
+			DummyService service = () -> {System.out.println("Lambda Expression");};
+		}
+	}
+
+# Disadvantages:
+1. we can only implement functional interfaces
+2. We cannot override default methods.
+
+
+# Few predefined functional interfaces
+	1. Runnable --> void run()
+	2. Comparable --> int compareTo()
+	3. Comparator --> compare()
+	4. Predicate --> boolean test(T t)
+	5. Consumer ---> void accept(T t);
+	6. Function ---->   R apply(T t);
+	7. Supplier  ---> T get();
+------------------------------------------------------------------------------------------------------------------------
+
+# Method Reference
+ - Different types
+    1. We can give references static methods: ClassName::staticMethodName
+    2. We can give references instance methods: reference::instanceMethodName
+    3. We can give references constructor: ClassName::new
+----------------------------------------------------------------------------------
+# call by value vs call by reference
+1. call by value means calling the methods by passing parameters i.e. values
+2. call by reference means calling the methods by passing actual references
+3. In conclusion, Java is strictly call by value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

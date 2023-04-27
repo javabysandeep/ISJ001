@@ -1,5 +1,9 @@
 package oops.java8Features.lambdaExpresion;
 
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
 public class DisplayTest {
     public DisplayTest() {
         System.out.println("Constructor value");
@@ -19,5 +23,6 @@ public class DisplayTest {
         //1. static method ClassName::methodName
         //2. Constructor reference ClassName::new
         //3. Instance methods ref ---: reference::instanceMethodName
+
     }
 }
