@@ -688,6 +688,64 @@ Lambda Expression:
 3. In conclusion, Java is strictly call by value
 
 
+# Array:
+It is a collection of elements which are of same type[Homogeneous]
+and stored in a sequantial memory locations.
+
+# With the help of array we can store multiple values which are of same tyep.
+
+
+# How to create an array?
+
+	syntax:
+		data_type[] array_name = new data_type[SIZE];
+	e.g.
+			int[] array = new int[30];
+
+		//int[] : it is just a notation.
+
+# Array declaration:
+		int[] array;
+
+# Array initilization: assigning value to array reference
+	array = new int[5];
+
+
+# What is array index?
+- Array elements are stored in sequential memory locations.
+- First element is stored at the address called as base address.
+- Index is just unit saying that how far the element is from the given base address.
+- Index starts from zero.
+
+# Why array index starts from zero only?
+- Since arrays first element is stored at base address.
+- index denotes how far the element is from given base address.
+- so first element is zero places far from base address.
+
+# What will be range of index in array?
+	- index range will be from ( min 0 to max : arrayLength - 1)
+
+# How to access array elements?
+- we access array elements with the help of index.
+
+# can we create array with zero size?
+- Yes we can create. object will be created with zero elements.
+
+# how to find size of array?
+- For every there is length variable available which denotes the size of an array
+	int[] array = {};
+	SOP(array.length);
+
+# can we create an array with negative size?
+- No. We get runtime exception called as NegativeArraySizeException
+
+# Is it compulsory to sepcify the size of an array?
+- yes. otherwise we get CTE
+
+
+- If we try to access an index from array which is not there we get exception
+	ArrayIndexOutOfBoundsException
+
 
 
 
