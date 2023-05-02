@@ -689,25 +689,25 @@ Lambda Expression:
 
 
 # Array:
-It is a collection of elements which are of same type[Homogeneous]
-and stored in a sequantial memory locations.
+Q. What is an Array?
+    - It is a collection of elements which are of same type[Homogeneous] and stored in a sequantial memory locations.
 
-# With the help of array we can store multiple values which are of same tyep.
+Q. Why to use Array?
+# With the help of array we can store multiple values which are of same type.
 
 
 # How to create an array?
-
 	syntax:
 		data_type[] array_name = new data_type[SIZE];
 	e.g.
-			int[] array = new int[30];
+			int[] array = new int[300000];//array declaration + array initialization
 
 		//int[] : it is just a notation.
 
 # Array declaration:
 		int[] array;
 
-# Array initilization: assigning value to array reference
+# Array initialization: assigning value to array reference
 	array = new int[5];
 
 
@@ -739,9 +739,8 @@ and stored in a sequantial memory locations.
 # can we create an array with negative size?
 - No. We get runtime exception called as NegativeArraySizeException
 
-# Is it compulsory to sepcify the size of an array?
+# Is it compulsory to specify the size of an array?
 - yes. otherwise we get CTE
-
 
 - If we try to access an index from array which is not there we get exception
 	ArrayIndexOutOfBoundsException
