@@ -746,10 +746,112 @@ Q. Why to use Array?
 	ArrayIndexOutOfBoundsException
 
 
+#Array
+
+Q.1 What is an array?
+	- it is a collection of multiple values  which are of same data type and stored in sequential memory locations.
+
+	- if we dont have array then we can create that many number of variables but it is not a good approach
 
 
+Q.2 Why to use array?
+- We use array to store multiple values which are of same type.
+- When we know no. of values are fixed.
+
+Q.3 How to use array?
+	syntax: - data_type[] reference_name = new data_type[SIZE];
+	eg. 	int[] array = new int[5];// array declaration + array initlization
+
+	- when we create an array we create an object which we will store the multiple variables
+
+	alternate way to create array:
+		int[] array = {1,2,3,4,5};
 
 
+- length is the instance variable associated with every array which represents the size of an array.
+
+		System.out.println(array.length);
+- when we create an array, all the elements of an array are initiliazed with default value.
+
+# How to access elements of an array?
+- Index is a measure of how far the element is from base address.
+- Array index starts from 0 as first is element is stored at base address.
+
+	SOP(array[index]);//index  will be from 0 to array length -1
+
+	- with the help of for loop we can access all the elements
+
+	public class Demo1 {
+    public static void main(String[] args) {
+        int[] array = {10,20,30,40,50};
+
+        //accessing the elements one by one
+        System.out.println(array[0]);//10
+        System.out.println(array[1]);//20
+        System.out.println(array[2]);//30
+        System.out.println(array[3]);//40
+        System.out.println(array[4]);//50
+        //System.out.println(array[5]);//ArrayIndexOutOfBoundsException
+
+        //access the elements with the help of for loop
+        System.out.println("Accessing the array elements with for loop");
+        for (int index = 0; index < array.length; index++) {
+            System.out.println(array[index]);
+        }
+
+    }
+}
+
+
+Q. can we create an array with size zero?
+Ans. Yes we can create. We dont get any CTE or RTE.
+		Array reference will point to the empty object without any elements.
+
+
+Q. can we create an array with negative size?
+Ans. No. we get RTE : NegativeArraySizeException
+
+
+Q. can we create an array with float value size?
+Ans. No. we get CTE
+
+
+Q. can we create an array with long value size?
+Ans. No. we get CTE
+
+
+# Advantages of array:
+1. with array we can store multiple values
+2. Retrival of data is faster and we get random acces to its elements
+3. Time complexity : o(1) --> constant: random access
+
+# Disadvantages:
+1. Arrays are fixed in size.
+2. Once array is created we cannot increase or decrease the size of an array.
+3. There will be shortage or wastage of memory.
+4. We can't store heterogenous data.
+5. Method support is not available for array such as searching, sorting, deletion, updation.
+
+
+# Multi- dimensional arrays
+	int[] array = {1,2,3,4,5};
+
+	int[][] array = {
+			{1,2,3,4,5},
+			{1,2,3,4,5},
+			{1,2,3,4,5}
+		};
+
+# What is a jagged array?
+Ans. An array which contains member arrays with different size is called as jagged array.
+		e.g.
+		int[][] array = {
+			{1,2,3,4,5},
+			{1,2,3},
+			{3,5}
+		};
+
+# How to access them?
 
 
 
