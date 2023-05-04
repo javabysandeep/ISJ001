@@ -853,6 +853,68 @@ Ans. An array which contains member arrays with different size is called as jagg
 
 # How to access them?
 
+** Before String handling:
+	- If we want to store single character we use char
+	- if we want to store multiple characters we use char array
+
+# Problems with char array:
+	1. storing the characters is time-consuming and error-prone as every character we have to enclosed with single quotes.
+		char ch = 'A';
+		char[] array = {'a','b'};
+
+	2. For every requirement such as delete, update, search , sort, merge, append, trnasform the characters developer is supposed to write code. No method supports.
+
+
+To store and manipulate group of characters efficiently java people provided some clases
+1. String
+2. StringBuilder
+3. StringBuffer
+
+- All these classes are present in java.lang package
+- All these classes are using character array internally and provides several methods which are working on that char array.
+
+
+# String:
+- it is predefined class present in java.lang pacakge
+- String class is a immutable class.
+- Immutable class { its object content cant be modified}
+- String class implements Comparable, Serializable, CharSequence
+- String represents group of characters.
+
+
+# String class object creation:
+- String class objects can be created in two ways.
+	1. using new keyword
+		String str = new String("welcome");
+
+	2. using literal way[this way of object creation is only possible forr String class alone]
+		String str = "welcome";
+
+# What is SCP?
+- SCP stands for String Constant Pool memory area.
+- SCP stores only String class objects
+- SCP is part of Heap memory area from Java 7 . earlier it was part of class memory area.
+- Object creation inside the SCP is conditional.
+- If the String class object content is already present then new object wont be created.
+- Unique objects will be there.
+
+# What is the difference between these two object creation styles?
+1. Using new keyword way:
+	when we create String class object with new keyword, compulsorly object will be created inside the Heap memory area and object will be also created inside the SCP of the object content is not present already.
+
+	e.g. String str = new String("abc");
+
+	Reference will be pointing to an object present inside the HEAP memory area.
+
+2. Using literal way :
+
+	When we create String class object with literal way:
+		1. object won't be created inside the heap memory area
+		2. Object will be created only inside the SCP if the object content is not present
+
+	e.g. String str = "abc";
+
+	Reference will be pointing to an object present inside the SCP memory area.
 
 
 
