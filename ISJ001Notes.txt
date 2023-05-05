@@ -917,7 +917,50 @@ To store and manipulate group of characters efficiently java people provided som
 	Reference will be pointing to an object present inside the SCP memory area.
 
 
+String s1 = "abc";
+String s2 = "abc";
+String s3 = "abc";
 
+Q. Why String class objects are immutable?
+Ans.
+	1. String objects are referred by multiple references.
+	2. If we change the object, all references will get modified value.
+	3. So to avoid this string objects are made immutable.
+
+Q. What are the different ways to construct String object?
+Ans.
+	1. using new keyword
+		String str = new String("abc");
+
+	2. using literal way
+		String str = "abc";
+
+Q. What is the difference in String object creation from the String literal and the constructor?
+Ans.
+	1. If we create String objects with **new** keyword then, without any filtration  object will be created in HEAP memory. As well as object will be created in SCP if the content object not present in the SCP
+
+	2. If we create String object with literal, first content of the object will be checked if it is already present then we get reference to the already existing object otherwise new object will be created in SCP
+
+
+
+Q.  What happesn if we print the String class reference?
+Ans. As String overrides toString(), hashCode(), equals(), String reference prints the content of the object
+
+
+
+
+
+Q. what is the difference between length & length()?
+Ans. length is variable associated with every array and returns the size of given array.
+	length() method present in String class which returns the length of String.
+
+Q. What are the limitations of String class?
+Ans. Since it is an immutable class we cant modify the content
+
+Q. How to concat the Strings?
+Ans.
+	1. using + operator
+	2. using concat method
 
 
 

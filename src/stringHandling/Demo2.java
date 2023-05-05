@@ -9,6 +9,9 @@ public class Demo2 {
         String str4 = new String("abc");
         String str5 = new String("abc");
 
+        System.out.println(str5.toString());//it prints the string content
+        System.out.println(str5.length());
+
 
 
     }
