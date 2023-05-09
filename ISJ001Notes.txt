@@ -943,11 +943,8 @@ Ans.
 
 
 
-Q.  What happesn if we print the String class reference?
+Q.  What happen if we print the String class reference?
 Ans. As String overrides toString(), hashCode(), equals(), String reference prints the content of the object
-
-
-
 
 
 Q. what is the difference between length & length()?
@@ -962,7 +959,31 @@ Ans.
 	1. using + operator
 	2. using concat method
 
+# Exception:
+	- It is unwanted, unexpected event that terminates the program abnormally.
+	- Exceptions can be recovered.
+	- Exceptions are caused due to logical errors, developers mistake
 
+# Error:
+	- It is also unwanted, unexpected event that terminates the program abnormally.
+	- Error causes abnormal termination
+	- We cannot recover from Errors
+	-e.g. OutOfMemoryError, StackOverflowError
+
+# Exception Handling:
+	- It is a processing of preventing abnormal termination of a program.
+	- We terminate the program gracefully.
+
+# What is default exception handling?
+	- By default JVM will create the exception object and it will be handovered to JRE
+	- JRE handovers the exception objects to Available exception handler.
+	- Default Exception Handler prints the exception details and terminate the program abnormally.
+
+# What are the different ways to handling exception?
+1. using try-catch
+2. throws keyword
+
+# How to handle exception using try catch?
 
 
 
