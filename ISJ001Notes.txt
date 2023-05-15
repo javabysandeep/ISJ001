@@ -1054,6 +1054,85 @@ finally :
 	- finally block executes always whether exceptions comes or not.
 	- finally block won't be executed if there is a call to the Sysyem.exit().
 
+File Handling
+
+- Files are permanent storage of data.
+- File. txt,csv, excel, ppt, json, xml,....
+
+- read and write the file content in the java program
+
+1. new file, new directory
+2. get the name, path,
+3. rename
+4. change the permissions
+5. get permissions
+6. size of file
+7. set, get file creattion time, modification
+8. reading the file content
+9. writing to the file
+10. overwrite
+11. append
+12. modify the file content
+13. replace file content
+14. copy file content to another file.
+
+#  Classes which are provided to perform above task.
+- java.io package
+
+- File
+- InputStream
+- OutputStream
+- FileInputStream
+- FileOutputStream
+- BufferedInputStream
+- BufferedOutputStream
+- ObjectInputStream
+- ObjectOutputStream
+- Reader
+- Writer
+- FileReader
+- FileWriter
+- BufferedReader
+- BufferedWriter
+- ObjectOutputStream
+- ObjectInputStream
+- Serializable[Marker]
+- trasient
+
+
+
+
+# Stream :
+	- logical connection between source and destination to cary the data
+	- channel or medium
+
+
+# File:
+	- File class provides several methods to do such task as below:
+		- create a new file/directory
+		- rename a file/directory
+		- delete a file/directory
+		- get the permissions for a file/directory
+		- set the permissions for a file/directory
+		- get length of  a file/directory
+		- get the path of a file/directory [absolute, relative]
+	* File class does not provide methods to read or write from a file.
+
+- Every file class object represents a single file or directory.
+- File class object creation does not create the file or directory immediatly.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
