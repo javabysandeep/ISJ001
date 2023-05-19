@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 
 public class Demo22Serialization {
     public static void main(String[] args) throws IOException {
-        Product product = new Product(101, "Laptop", 87000);
+        Product product = new Product(101,"laptop",37000);
         File file = new File("product.txt");
         file.createNewFile();
         FileOutputStream fileOutputStream = new FileOutputStream(file);

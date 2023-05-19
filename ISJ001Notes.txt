@@ -1121,9 +1121,108 @@ File Handling
 - Every file class object represents a single file or directory.
 - File class object creation does not create the file or directory immediatly.
 
+# Serialization and Deserialization
+
+Serialization :
+		- It is a process of saving Java object permannetly in file on disk.
+		- Class must implement Serializable interface
+		- Serializable is a marker interface [Empty interface]
+		- To perform serialization we use class : ObjectOutputStream
 
 
 
+De-Serialization:
+		- It is a process of reading a java object from a file.
+		- To Perform de-serialization - Class must implement Serializable interface
+		- - To perform De-serialization we use class : ObjectInputStream
+
+
+If we try to serialize/de-serialize an object which is not of type Serializable we get NotSerializableException
+
+# transient keyword:
+	- If we use it on a instance variable then that field will not be part of serialization process.
+
+
+# Multithreading
+
+ - Basics  or requisite :
+		- class, object, class components, oops, Object class,
+		- Anonymous class
+		- Functional interface, Default methods, Lambda expression
+		- multiple inheritance
+
+- Program : set of instructions given to computer to complete a task.
+
+- Software : set of programs
+
+- Process : application in execution
+			- Each process has a separate memory area associated.
+
+- Multi-processing:
+	- running multiple processes at the same time.
+	- multiprocessing happens at OS level
+
+- Context switching:
+	- switching from one processes to another process
+	- when we switch from one process to another process, process state has to be saved
+	- Context switch is expensive for process
+
+
+
+# Multiple Threads
+
+- Thread : block of code
+
+# Multi-threading :
+	- running multiple blocks of code at the same time.
+	- Multithreading happens at program level.
+
+
+- Creating a new process is expensive as it requires separate memory area.
+
+- Creating a new thread is less expensive as compared to process as threads wil share the common memory of the given process.
+
+
+- Every application will have minimum of one thread i.e. single threaded application
+
+
+# Why to use multithreading?
+	- To run multiple blocks of code at the same so that we can utilize the CPU at best and get the work done in shorter time duration.
+
+# How to use multithreading?
+- To implement multithreading we have some classes , interfaces  e.g. Thread, Runnable(I), ThreadGroup....
+- For every java application there is one thread already created called as main thread.
+- Job of main thread is to complete main method execution.
+- Jof of every user-defined thread is to execute run method
+
+How to create threads in java ?
+	- we have two ways to create threads
+		1. by extending Thread class
+		2. by implementing Runnable interface
+
+Thread :
+	- it is a predefined concrete class present in java.lang
+	- Thread class implements Runnable interface
+	- provides implementation of run() method and calles the target[subclass] class run method
+
+- For every user-defined thread we write block of code inside the run method.
+- For every user -defined  thread, its job is to complete run method execution.
+
+# Creating thread by extending Thread class
+	1. We create a class which extends Thread class.
+	2. To write the work or task that thread will do we have to override run method
+	3. Create subclass object and call start method.
+		start() ---> run()[Thread class] ---> run()[subclass]
+    Drawbacks: If we do this the subclass cannot extend any other class.
+
+#2. Using Runnable interface.
+	1. Create a subclass of type Runnable and override the run method and write job of thread
+			- create traditional subclass in separate
+			- use anonymous class to implement Runnable
+			- lambda expression to implement Runnable
+	2. Create the object of subclass of type Runnable
+	3. Create the object of Thread class and pass subclass object reference as a constructor parameter
+	4. using thread class reference call start method.
 
 
 

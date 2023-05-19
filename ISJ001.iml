@@ -7,5 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="poi-5.2.3" level="project" />
+    <orderEntry type="library" name="jackson-databind-2.15.0" level="project" />
+    <orderEntry type="library" name="lombok-1.18.26" level="project" />
   </component>
 </module>
