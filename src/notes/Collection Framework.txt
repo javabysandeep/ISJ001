@@ -1,0 +1,125 @@
+# Collection Framework
+
+
+Framework : 
+	- Predefined set of code	
+	- Java based framework will contain predefined set of classes, interface, methods
+	- solutions provided for set of problems faced.
+	- Collection framework comes with standard JDK
+	- Spring, Hibernate Selenium frameworks need to addd externally in the project
+
+
+# Drawbacks of Array :
+	1. Array is fixed in size
+	2. Either shortage or wastage of memory
+	3. We can only store homogeous data
+	4. No method supprt. For every requirement such as insert, delete, search sort in a given array developer is suppoed to write code.
+
+# Collection Framework:
+	- It is also predefined set of code which contains classes, interfaces, methods
+	- All the collection framework classes, interfaces are part of java.util package
+	- Solution: 
+			1. It overcomes the drawbacks of Array.
+			2. With the help of collection framework we can store multiple values[objects] which can 						be of same type or different type as a single unit.
+			3. With the collection we can store homogeneous as well as hetergoneous data.
+			4. Method support is available. 
+			5. Collections are growable in nature.
+
+	
+# Collection Hierarchy 
+
+# Iterable(I)
+- interface present in java.lang package
+- it contains -  public abstract java.util.Iterator<T> iterator();
+
+
+# Collection(I):
+- It is an inteface present inside java.util package which extends java.lang.Iterable
+- It has three direct sub-interfaces : List, Set, Queue
+- It contains several these below methods: 
+
+1. to Add single element :  public abstract boolean add(E);
+2. To Add multiple elements: public abstract boolean addAll(java.util.Collection<? extends E>);
+3. To remove single element: public abstract boolean remove(java.lang.Object);
+4  To remove multiple elements:  public abstract boolean removeAll(java.util.Collection<?>);
+5. To remove elements based on condition: public boolean removeIf(java.util.function.Predicate<? super E>);
+6. To remove all the elements from a given container:   public abstract void clear();
+7. To find the no. elements :  public abstract int size();
+8. to check if collection is empty or not: public abstract boolean isEmpty();
+9. To check if a given element is there or not :  public abstract boolean contains(java.lang.Object);
+10. To check if multiple given elements are there or not :   public abstract boolean containsAll(java.util.Collection<?>);
+11. public abstract boolean equals(java.lang.Object);
+12. public abstract int hashCode();
+13. to get the array from given collection : public abstract <T> T[] toArray(T[]);
+14. public abstract java.util.Iterator<E> iterator();
+15. To remove the elements except specifed elemenets: public abstract boolean retainAll(java.util.Collection<?>);
+16. public java.util.Spliterator<E> spliterator();
+17. public java.util.stream.Stream<E> stream();
+18. public java.util.stream.Stream<E> parallelStream();
+
+
+# List (I)
+- it is an interface which is present in java.util package
+- List extends Collection(I)
+- List has 4 implementations : ArrayList, LinkedList, Vector, Stack
+- Some extra methods which are there in List :
+	
+public abstract int size();
+  public abstract boolean isEmpty();
+  public abstract boolean contains(java.lang.Object);
+  public abstract java.util.Iterator<E> iterator();
+  public abstract java.lang.Object[] toArray();
+  public abstract <T> T[] toArray(T[]);
+  public abstract boolean add(E);
+  public abstract boolean remove(java.lang.Object);
+  public abstract boolean containsAll(java.util.Collection<?>);
+  public abstract boolean addAll(java.util.Collection<? extends E>);
+  public abstract boolean addAll(int, java.util.Collection<? extends E>);
+  public abstract boolean removeAll(java.util.Collection<?>);
+  public abstract boolean retainAll(java.util.Collection<?>);
+  public void replaceAll(java.util.function.UnaryOperator<E>);
+  public void sort(java.util.Comparator<? super E>);
+  public abstract void clear();
+  public abstract boolean equals(java.lang.Object);
+  public abstract int hashCode();
+  public abstract E get(int);
+  public abstract E set(int, E);
+  public abstract void add(int, E);
+  public abstract E remove(int);
+  public abstract int indexOf(java.lang.Object);
+  public abstract int lastIndexOf(java.lang.Object);
+  public abstract java.util.ListIterator<E> listIterator();
+  public abstract java.util.ListIterator<E> listIterator(int);
+  public abstract java.util.List<E> subList(int, int);
+  public java.util.Spliterator<E> spliterator();
+
+
+
+# ArrayList
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,176 @@
+File Handling
+
+- Files are permanent storage of data.
+- File. txt,csv, excel, ppt, json, xml,.... 
+
+- read and write the file content in the java program
+
+1. new file, new directory
+2. get the name, path,
+3. rename
+4. change the permissions
+5. get permissions
+6. size of file
+7. set, get file creattion time, modification
+8. reading the file content
+9. writing to the file
+10. overwrite
+11. append
+12. modify the file content
+13. replace file content
+14. copy file content to another file.
+
+#  Classes which are provided to perform above task.
+- java.io package
+
+- File
+- InputStream
+- OutputStream
+- FileInputStream
+- FileOutputStream
+- BufferedInputStream
+- BufferedOutputStream
+- ObjectInputStream
+- ObjectOutputStream
+- Reader
+- Writer
+- FileReader
+- FileWriter
+- BufferedReader
+- BufferedWriter
+- ObjectOutputStream
+- ObjectInputStream
+- Serializable[Marker]
+- trasient
+
+
+
+
+# Stream : 
+	- logical connection between source and destination to cary the data
+	- channel or medium
+
+
+# File:
+	- File class provides several methods to do such task as below:
+		- create a new file/directory
+		- rename a file/directory
+		- delete a file/directory
+		- get the permissions for a file/directory
+		- set the permissions for a file/directory
+		- get length of  a file/directory
+		- get the path of a file/directory [absolute, relative]
+	* File class does not provide methods to read or write from a file.
+
+- Every file class object represents a single file or directory.
+- File class object creation does not create the file or directory immediatly. 
+
+
+
+
+
+
+InputStream
+	- FileInputStream
+	- BufferedInputStream
+	- ObjectInputStream
+
+OutputStream
+	- FileOutputStream
+	- BufferedOutputStream
+	- ObjectOutputStream
+
+Reader
+	- FileReader
+	- BufferedReader
+
+Writer
+	- FileWriter
+	- BufferedWriter
+
+
+File Handling
+
+File -
+	- concrete class java.io pacakge
+
+File class is used to 
+	- create new file/folder
+	- rename a file/folder
+	- delete a file/folder
+	- get/set permissions for file
+	- get paths[Relative, Absolute] of file/folder
+	- get the length of File
+	- List all the files in a given folder
+	- Filter the files in a given folder based on name, size, last modified, created,
+	
+
+Stream - logical connection/ mediam / channel between source and destination to transfer the data
+
+Different types of Streams based on the data they carry
+1. Byte oriented Streams
+		- InputStream [Read data from differnent sources to Java app in terms of Bytes]
+			- FileInputStream
+			- BufferedInputStream
+			- ObjectInputStream
+
+		- OutputStream [Write data to differnent destinatins from Java app in terms of Bytes]
+			- FileOutputStream
+			- BufferedOutputStream
+			- ObjectOutputStream
+
+2. Character Oriented Streams
+		- Reader [Read data from differnent sources to Java app in terms of Characters]
+			- FileReader
+			- BufferedReader
+		
+		- Writer [Write data to differnent destinatins from Java app in terms of Characters]
+			- FileWriter
+			- BufferedWriter
+
+# Serialization and Deserialization
+
+Serialization : 
+		- It is a process of saving Java object permannetly in file on disk.
+		- Class must implement Serializable interface
+		- Serializable is a marker interface [Empty interface]
+		- To perform serialization we use class : ObjectOutputStream
+		
+
+
+De-Serialization:
+		- It is a process of reading a java object from a file.
+		- To Perform de-serialization - Class must implement Serializable interface
+		- - To perform De-serialization we use class : ObjectInputStream
+
+
+If we try to serialize/de-serialize an object which is not of type Serializable we get NotSerializableException
+
+# transient keyword:
+	- If we use it on a instance variable then that field will not be part of serialization process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
