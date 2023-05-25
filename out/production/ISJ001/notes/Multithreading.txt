@@ -1,0 +1,210 @@
+# Multithreading
+
+ - Basics  or requisite :
+		- class, object, class components, oops, Object class,
+		- Anonymous class
+		- Functional interface, Default methods, Lambda expression
+		- multiple inheritance
+
+- Program : set of instructions given to computer to complete a task.
+
+- Software : set of programs
+
+- Process : application in execution
+			- Each process has a separate memory area associated.
+
+- Multi-processing: 
+	- running multiple processes at the same time.
+	- multiprocessing happens at OS level
+
+- Context switching: 
+	- switching from one processes to another process
+	- when we switch from one process to another process, process state has to be saved
+	- Context switch is expensive for process
+
+
+# Multiple Threads
+
+- Thread : block of code
+
+# Multi-threadig : 
+	- running multiple blocks of code at the same time.
+	- Multithreading happens at program level.
+
+
+- Creating a new process is expensive as it requires separate memory area.
+
+- Creating a new thread is less expensive as compared to process as threads wil share the common memory of the given process.
+
+
+- Every application will have minimum of one thread i.e. single threaded application
+
+
+# Why to use multithreading?
+	- To run multiple blocks of code at the same so that we can utilize the CPU at best and get the work done in shorter time duration.
+
+# Disadvantages :
+	1. application can go in waiting or hung state if not properly handled
+	2. Dead lock can also occur
+	3. Debugging the multithreaded application is difficult.
+
+# How to use multithreading?
+- To implement multithreading we have some classes , interfaces  e.g. Thread, Runnable(I), ThreadGroup....
+- For every java application there is one thread already created called as main thread.
+- Job of main thread is to complete main method execution.
+- Jof of every user-defined thread is to execute run method
+
+How to create threads in java ?
+	- we have two ways to create threads
+		1. by extending Thread class
+		2. by implementing Runnable interface
+
+Thread :
+	- it is a predefined concrete class present in java.lang
+	- Thread class implements Runnable interface
+	- provides implementation of run() method and calles the target[subclass] class run method
+
+- For every user-defined thread we write block of code inside the run method.
+- For every user -defined  thread, its job is to complete run method execution.
+
+
+# Creating thread by extending Thread class
+	1. We create a class which extends Thread class.
+	2. To write the work or task that thread will do we have to override run method
+	3. Create subclass object and call start method.
+		start() ---> run()[Thread class] ---> run()[subclass]
+
+Drawbacks: If we do this the subclass cannot extend any other class.
+
+
+#2. Using Runnable interface.
+
+	1. Create a subclass of type Runnable and override the run method and write job of thread
+			- create traditional subclass in separate
+			- use anonymous class to implement Runnable
+			- lambda expression to implement Runnable
+	2. Create the object of subclass of type Runnable
+	3. Create the object of Thread class and pass subclass object reference as a constructor parameter
+	4. using thread class reference call start method.
+
+
+
+# Thread Life Cycle
+
+1. New /Born
+2. Ready
+3. Running
+4. Terminated
+5. Waiting/Sleeping
+
+# Thread Names:
+- By default for user defiend thread names are given  as Thread-0 and so ...
+- To change the name of thread : 
+		1. Pass the Thread name in the Thread class constructor
+		2. Use the thread.setName(ThreadName) method
+
+
+# Thread execution preventation methods
+1. Sleep -
+	- it is a static method present inside the Thread class
+	- When sleep is called the currently thead will pause the execution for specified time duration.
+		e.g. Thread.sleep(1000);//time is in milliseconds
+	
+2. join
+3. yield
+	- this will cause currently executing thread to stop the execution for other threads which are having same or more priority
+
+
+# Thread class methods
+1. start() : it is used to start the execution of a thread
+        // restarting a thread will cause an exception : IllegalThreadStateException
+
+2. run(): it is used to call the subclass run method
+3. setName(): it is used to set the name of thread
+4. getName(): it returns the name of a thread
+5. setPriority(): it is used to set the priority of thread
+        //MIN : 0
+        //MAX: 10
+	-  If priority is not within range we get : //IllegalArgumentException
+	- By default priority is  : 5
+	- There are three constants are also created
+    - MIN_PRIORITY = 1
+    - NORM_PRIORITY = 5
+    - MAX_PRIORITY = 10
+
+6. setDaemaon() : true/false
+7. isDaemon() : will return true or false
+
+What is daemon thread ?
+	- It is a thread which will be running in the background
+	- These are also called as services threads.
+	- Garbage Collector is a example of Daemon thread.
+
+# Inter Thread Communication
+- synchronized keyword
+- Different types of locking/ Monitor
+	- object level lock
+	- class level lock
+- wait()
+- notify()
+- notifyAll()
+- Thread Safe class or Thread Saftey
+- wait, notify and notifyAll must be called from synchronized context otherwise we get IllegalMonitorStateException
+
+
+
+
+
+
+
+
+
+Keywords:
+datatypes : byte, short, int, long, 
+			char, float ,double boolean
+values : 	true, false, null, void
+OOPS : 	class, new, static, this, 
+			super, abstract, interface, extends, 
+		implements, final, package, import, 
+		enum
+
+control statements: if, else, switch, case, break, default, continue, for, while, do, return
+exception handling: try, catch, throws, throw, finally
+file handling : trasient
+multithreading : synchronized, volatile
+access specifier : public, private, protected, native[48]
+unused : goto, const [50]
+strictfp, 
+instanceof
+assert
+
+
+
+
+
+
+The `volatile` keyword in Java is used to indicate that a variable's value may be modified by different threads. 
+
+When a variable is declared as `volatile`, the compiler and runtime system are informed that the variable's value may be modified by other threads and that the value should not be cached in a thread's local memory. 
+
+Instead, the variable's value is always read from and written to the main memory, ensuring that all threads can see the most up-to-date value.
+
+`volatile` is useful for variables that are used by multiple threads, as it helps to prevent data inconsistencies that can occur when multiple threads try to access and modify the same variable at the same time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

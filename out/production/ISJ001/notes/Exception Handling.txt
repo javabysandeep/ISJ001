@@ -1,0 +1,138 @@
+# Exception
+
+- It is an unwanted, unexpected event due to which program terminates abnormally[without any notice]
+	e.g. Dividing a number by zero, accessing the array index which is not there in the given number
+- Whenever such event occuers program execution is not completed.
+- Exceptions can be recovered.
+- These are caused due to developer mistakes, logical mistakes
+
+
+# Error :
+- It is an unwanted, unexpected event due to which program terminates abnormally[without any notice]
+- Whenever such event occuers program execution is not completed.
+- Errors cannot be recovered.
+- Errors are caused due to bad programming practices and lack of resources such memory
+
+
+# Exception Handling
+- It is process of preventing abnormal termination of the program. 
+
+# Default Exception Handling
+- Particular Exception class object is created.
+- Exception object is given to JRE and JRE hand over to Default Exception Handler
+- Default Exception Handler prints the exception details and terminate the program abnormally.
+
+
+# Exception hierarchy or usefool classes to handle exceptions
+- Throwable class is extended by Exception and Error clasess
+- Exception is extended by RuntimeException class
+- In this all of these classes are concrete classes.
+- All these classes are present in java.lang package 
+
+
+# Types of Exceptions
+1. Compile time exceptions OR Checked Exceptions
+	- Will occur at the time of compilation
+	- Checked exeptions classes always extends Exception class
+	e.g. 
+		1. NoSuchFieldException
+		2. NoSuchMethodException
+		3. IllegalAccessException
+		4. InstantiationException
+		5. ClassNotFoundException
+
+2. Runtime Exceptions OR UnChecked Exceptions
+	- Will occur at the time of execution
+	- UnChecked exeptions classes always extends either RunTimeExpection or Error class
+	e.g. 
+		1. ArithmeticException
+		2. ArrayIndexOutOfBoundsException
+		3. NullPointerException
+		4. NegativeArraySizeException
+		5. StringIndexOutOfBoundsException
+		
+	Errors:
+		1. OutOfMemoryError
+		2. StackOverflowError
+		3. 
+
+
+# How to handle exceptions?
+1. using try catch
+2. using throws keyword.
+
+
+# handling the exceptions using try-catch
+
+try {
+	//exception prone code 
+	// the code which can potentially cause the abnormal termination of the program
+	//Division
+
+	// if no abrnormal condition is there, program will complete the execution
+	// if there is an event that is causing the issue:
+		 - Implicitly that situation causing event representation class object  will be created.
+		 - exeception object is given to JRE 
+}
+
+//custom exception handler
+catch(Exception exception){
+	//alternate code 
+}
+
+
+- independent try, catch, finally are not allowed
+- for every catch there should be try
+
+
+//Allowed combination
+ - TC, TCF, TF, TCC, TCCCF
+
+
+finally :
+	- this block is used to write code which is cleanup code such as closing the conntection to DB
+	- finally block executes always whether exceptions comes or not.
+	- finally block wont be executed if there is a call to the Sysyem.exit().
+	
+
+# throw keyword:
+- it is used to explicitly throw the exception object to the JRE
+- Using this we can throw the exception object explicitly of Predefined or custom excception classes.
+syntax: 
+	throw new ExceptionClassName("Message");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
