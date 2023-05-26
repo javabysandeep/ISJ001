@@ -2,9 +2,10 @@ package collectionFramework;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
-public class Demo12SortListEmployee {
+public class Demo16SortListEmployee {
     public static void main(String[] args) {
         Employee employee1 = new Employee(11, "Sandesh", 67000);
         Employee employee2 = new Employee(10, "Aditi", 47000);
@@ -20,7 +21,11 @@ public class Demo12SortListEmployee {
         employeeList.add(employee5);
 
         //sort employees
-        //Collections.sort(employeeList);//List of Comparable
+//        Comparator :  int compare(T o1, T o2);
+//        Collections.sort(employeeList, (emp1, emp2) -> emp1.getEmployeeSalary() - emp2.getEmployeeSalary());
+//        Collections.sort(employeeList, Comparator.comparingInt(Employee::getEmployeeId));
+//        Collections.sort(employeeList, (emp1, emp2)->emp1.getEmployeeName().compareTo(emp2.getEmployeeName()));
+        Collections.sort(employeeList, Comparator.comparing(Employee::getEmployeeName));
         employeeList.forEach(System.out::println);
 
     }

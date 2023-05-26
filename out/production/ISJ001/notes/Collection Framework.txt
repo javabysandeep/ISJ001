@@ -1,8 +1,8 @@
 # Collection Framework
 
 
-Framework : 
-	- Predefined set of code	
+Framework :
+	- Predefined set of code
 	- Java based framework will contain predefined set of classes, interface, methods
 	- solutions provided for set of problems faced.
 	- Collection framework comes with standard JDK
@@ -18,15 +18,15 @@ Framework :
 # Collection Framework:
 	- It is also predefined set of code which contains classes, interfaces, methods
 	- All the collection framework classes, interfaces are part of java.util package
-	- Solution: 
+	- Solution:
 			1. It overcomes the drawbacks of Array.
 			2. With the help of collection framework we can store multiple values[objects] which can 						be of same type or different type as a single unit.
 			3. With the collection we can store homogeneous as well as hetergoneous data.
-			4. Method support is available. 
+			4. Method support is available.
 			5. Collections are growable in nature.
 
-	
-# Collection Hierarchy 
+
+# Collection Hierarchy
 
 # Iterable(I)
 - interface present in java.lang package
@@ -36,7 +36,7 @@ Framework :
 # Collection(I):
 - It is an inteface present inside java.util package which extends java.lang.Iterable
 - It has three direct sub-interfaces : List, Set, Queue
-- It contains several these below methods: 
+- It contains several these below methods:
 
 1. to Add single element :  public abstract boolean add(E);
 2. To Add multiple elements: public abstract boolean addAll(java.util.Collection<? extends E>);
@@ -63,42 +63,41 @@ Framework :
 - List extends Collection(I)
 - List has 4 implementations : ArrayList, LinkedList, Vector, Stack
 - Some extra methods which are there in List :
-	
-public abstract int size();
-  public abstract boolean isEmpty();
-  public abstract boolean contains(java.lang.Object);
-  public abstract java.util.Iterator<E> iterator();
-  public abstract java.lang.Object[] toArray();
-  public abstract <T> T[] toArray(T[]);
-  public abstract boolean add(E);
-  public abstract boolean remove(java.lang.Object);
-  public abstract boolean containsAll(java.util.Collection<?>);
-  public abstract boolean addAll(java.util.Collection<? extends E>);
-  public abstract boolean addAll(int, java.util.Collection<? extends E>);
-  public abstract boolean removeAll(java.util.Collection<?>);
-  public abstract boolean retainAll(java.util.Collection<?>);
-  public void replaceAll(java.util.function.UnaryOperator<E>);
-  public void sort(java.util.Comparator<? super E>);
-  public abstract void clear();
-  public abstract boolean equals(java.lang.Object);
-  public abstract int hashCode();
-  public abstract E get(int);
-  public abstract E set(int, E);
-  public abstract void add(int, E);
-  public abstract E remove(int);
-  public abstract int indexOf(java.lang.Object);
-  public abstract int lastIndexOf(java.lang.Object);
-  public abstract java.util.ListIterator<E> listIterator();
-  public abstract java.util.ListIterator<E> listIterator(int);
-  public abstract java.util.List<E> subList(int, int);
-  public java.util.Spliterator<E> spliterator();
+
+	When to List implementing classes?
+		- List will help us store multiple elements which can be duplicate
+		- It will help us maintain insertion order
 
 
+# ArrayList:
+1. It is an implementation List present in java.util package
+2. It helps in storing the duplicate elements
+3. It maintains the insertion order of elements
+4. It can store homogeneous as well as heterogeneous elements
+5. Null insertion is possible any number of times.
+6. ArrayList is best for retrival of data
+7. ArrayList is worst for modification of data.
+9. ArrayList internally maintains the growable array data structure.
+		Object[] value = new Object[10];
+	- ArrayList will maintain initial array of size 10. Once this array is full it will create new array with new capacity
+		New Capacity = Old Capacity + Old Capacity * 0.5 + 1;
+10. ArrayList methods are not synchronized. ArrayList is not a thread safe class.
 
-# ArrayList
 
-
-
+# Vector:
+1. It is an implementation of List present in java.util package
+2. It helps in storing the duplicate elements
+3. It maintains the insertion order of elements
+4. It can store homogeneous as well as heterogeneous elements
+5. Null insertion is possible any number of times.
+6. Vector is best for retrival of data
+7. Vector is worst for modification of data.
+9. Vector internally maintains the growable array data structure.
+		Object[] value = new Object[10];
+	- Vecotr will maintain initial array of size 10. Once this array is full it will create new array with new capacity
+		New Capacity = 2 * Old Capacity;
+10. Vector methods are synchronized. Vector is a thread safe class.
+11. It is a legacy class.
 
 
 
