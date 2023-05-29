@@ -146,9 +146,6 @@ Ans.
 	5. size: to get size i.e. no. elements present inside the stack.
 	6. search: to search an element in a given Stack.
 
-
-
-
 # Set (I)
 - It is an interface which extends Collection(I) present in java.util
 - It helps us in storing unique elements.
@@ -271,6 +268,44 @@ Queue:
 		- remove the existing element
 
 	- ListIterator instanc we can get it with the method : listIterator();
+
+
+# Map<I>
+- It helps in storing the multiple elements as a Key VALUE pair as a single unit.
+- Map is an interface present inside the java.util package.
+
+# HashMap:
+1. HashMap implements Map interface
+2. It stores only unique key elements
+3. It can store homogeneous as well as heterogeneous key elements
+4. It can store null key element but only once
+5. It does not maintain sorting order of keys
+6. It does not maintain insertion order of keys
+7. It maintains the uniqueness of key elements by using equals() and hashCode() methods
+8. There is no restrictions for value place
+
+
+# LinkedHashMap:
+1. LinkedHashMap implements Map interface and extends HashMap
+2. It stores only unique key elements
+3. It can store homogeneous as well as heterogeneous key elements
+4. It can store null key element but only once
+5. It does not maintain sorting order of keys
+6. It maintains insertion order of keys
+7. It maintains the uniqueness of key elements by using equals() and hashCode() methods
+
+
+
+# TreeMap:
+1. TreeMap implements NaviagbleMap interface
+2. It stores only unique key elements
+3. It can store homogeneous key elements only since it maintains sorting order of keys
+4. It cannot store null key element even once otherwise we get NullPointerExpcetion
+5. It maintains sorting order of key elements
+6. It does not maintain insertion order of key elements
+7. It maintains the uniqueness of key elements by using Comparable OR Comparator
+8. It sorts the elements by using Comparable OR Comparator
+9. There is no restriction fo value place.
 
 
 
