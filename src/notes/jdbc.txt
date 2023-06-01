@@ -1,0 +1,51 @@
+# Pre-requisite for JDBC
+
+- How to create objects?
+- access specifier
+- primitives vs Wrapper classes
+- How to load class in the memory?
+	1. new
+	2. Class.forName
+- instance block vs static block
+- constructor
+- interface
+- abstract class
+- inheritance
+- method overloading
+- method overriding
+- Exception handling
+- Collection : List Implementations, Sorting of elements
+
+# Anonymous class:
+	- it is a class without name
+	- we combine class definition and object creation in the same line since it does not have name
+	- Anonymous class will always be a subclass
+	- It can subclass of an abstract class, interface or concrete class
+	- We use anonymous class if the class is used only once
+
+# Installations :
+1. Mysql Client Software : MySQL Workbench : https://dev.mysql.com/downloads/workbench/
+DBViewer,
+2. Mysql Server Software: MySQL Community server :https://dev.mysql.com/downloads/mysql/
+3. Learn SQL : https://www.w3schools.com/sql/
+
+What is Database?
+Why to use Database?
+What is Database Management System?
+Why to use DBMS?
+What is Database Client Software?
+Why to use DB client software?
+What is Database Server Software?
+Why to use DB server software
+What is Relational database?
+What is Non-Relation database?
+What is SQl?
+Why to SQL?
+How to use SQL?
+Drawbacks of File System
+What is MYSQL, Oracle SQl, Posgress, Microsoft SQL Server,.. MongoDB, .....
+
+
+
+
+
