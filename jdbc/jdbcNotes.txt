@@ -1,0 +1,349 @@
+# Basics for JDBC
+
+- How to create objects?
+- acccess specifier
+- primitives vs Wrapper classes
+- How to load class in the memory?
+	1. new
+	2. Class.forName
+- instance block vs static block
+- constructor
+- interface
+- abstract class
+- inheritance
+- method overloading
+- method overriding
+- Exception handling
+- Collection : List Implementations, Sorting of elements
+
+
+# Anonymous class:
+	- it is a class without name
+	- we combine class definition and object creation in the same line since it does not have name
+	- Anonymous class will always be an subclass
+	- It can subclass of an abstract class, interface or concrete class
+	- We use anonymous class if the class is used only once
+
+
+# Installations :
+1. Mysql Client Software : MySQL Workbench : https://dev.mysql.com/downloads/workbench/
+2. Mysql Server Software: MySQL Community server :https://dev.mysql.com/downloads/mysql/
+
+
+
+
+# File system:
+- to store data on a disk
+- data duplication
+- manipulation of data is difficult
+- security is not possible with file system
+- managing permissions, roles on data level is difficult.
+
+
+
+# What is Database?
+- Collection of structured information
+- Database is also called as data source or data lake or data pool.
+- Database is stored on a disk memory.
+- Data Vs Information[Processed Data]
+- Data can be structured in two types generally.
+	- relational database [ data is stored in terms of fixed no. rows and columns where columns are same for all the rows.]
+	- non- relational database [ Data is stored in terms of rows and columns where no. of columns may vary from one row to another.] [documents]
+
+- data stored is permanent.
+- Database can be present on local machine or remote machine also.
+
+
+# Operations on Database
+- Create Database
+- Rename Database
+- Delete Database
+- Set permissions for a database
+- Create Users
+- Update Users
+- Delete Users
+- Set roles
+- Upddate roles
+- Delete Roles
+- Permission set up
+-  Create table
+- Alter table
+- Delete table
+- drop table
+- insert data into the table
+- update data in the table
+- delete data
+- select or retrive data or projection of data
+
+
+# To perform all these operations lot of softwares are developed.
+- Such softwares are called as DBMS[ Database Management Software or Systems]
+- There are lot of DBMS are available in the market
+	e.g. Oracle SQL, MySQL, Microsoft- SQL Server, Posgress, Mongo DB, Cassendra, ......., Redis Cache....
+
+
+# To Create a database : CREATE database database_name;
+# Use the database: use database_name;
+# To Create a table :  CREATE TABLE table_name(column_name data_type);
+	e.g.
+
+			create table student(
+				id int,
+				name varchar(100),
+				phone varchar(20),
+				email varchar(50),
+				address varchar(100)
+			);
+
+
+
+
+# To know structure of the table : DESC table_name;
+# To get all the rows from the table : SELECT * FROM TABLE_NAME:
+		e.g. select * from student;
+
+
+# To insert data in the given table: INSERT INTO TABLE_NAME values(column1, column2...);
+
+	e.g. INSERT INTO student_NAME values(101, 'Sandesh', '98989898989', 'sandesh@gmail.com', 'Pune' );
+
+
+# To delete the record : delete from table_name;
+
+
+# To update the record : update databaseName.tableName set columnName= newValue WHERE columnName=value;
+	e.g. UPDATE it_shaala.student set name='Sandesh D' where id=101;
+
+
+# CRUD Operations
+C - Create [INSERT INTO]
+R - Read [SELECT]
+U - Update [Update]
+D - Delete [Delete]
+
+
+# SQL Queries
+- CRUD
+- To filter or apply some criteria : WHERE clause
+- To get data from multiple tables we use: JOIN
+
+
+1. SELECT CustomerID, CustomerName FROM Customers where customerName like 'B%' ;
+2. SELECT * FROM CUSTOMER;
+3. SELECT CustomerID, CustomerName FROM Customers;
+4. SELECT CustomerID, CustomerName FROM Customers limit 10;
+
+SQL keywords are NOT case sensitive: select is the same as SELECT
+
+SELECT - extracts data from a database
+UPDATE - updates data in a database
+DELETE - deletes data from a database
+INSERT INTO - inserts new data into a database
+CREATE DATABASE - creates a new database
+ALTER DATABASE - modifies a database
+CREATE TABLE - creates a new table
+ALTER TABLE - modifies a table
+DROP TABLE - deletes a table
+CREATE INDEX - creates an index (search key)
+DROP INDEX - deletes an index
+
+SELECT distinct Country FROM Customers; --- unique
+
+SELECT count(DISTINCT Country) FROM Customers;
+
+SELECT * FROM Customers WHERE Country='Germany';
+SELECT * FROM Customers WHERE customerName like '%Y'
+
+
+
+#WHERE
+=	Equal
+>	Greater than
+<	Less than
+>=	Greater than or equal
+<=	Less than or equal
+<>	Not equal. Note: In some versions of SQL this operator may be written as !=
+BETWEEN	Between a certain range
+LIKE	Search for a pattern
+IN	To specify multiple possible values for a column
+
+
+SQL AND, OR and NOT Operators
+
+
+
+SELECT * FROM Customers
+WHERE Country='Germany' OR Country='Mexico';
+
+SELECT * FROM Customers
+WHERE NOT Country='Germany';
+
+
+SELECT * FROM Customers
+WHERE Country='Germany' AND (City='Berlin' OR City='München');
+
+SELECT * FROM Customers
+WHERE NOT Country='Germany' AND NOT Country='USA';
+
+
+SELECT *  FROM CUSTOMERs
+WHERE NOT (Country='Germany' OR  Country='UK');
+
+
+SELECT * FROM CUSTOMERS WHERE Country='UK' AND customerName like 'B%';
+
+SELECT * FROM EMPLOYEES order by FirstName desc;
+
+
+SELECT *
+FROM student
+WHERE email IS NOT NULL;
+
+
+
+
+select * from (SELECT * from Products order by Price desc limit 2 ) order by price asc limit 1;
+
+
+
+
+
+# JDBC - Java Database Connectivity
+- It is a technology, API, specification, predefined set of code present in java.sql , javax.sql package
+- Using JDBC we can communicate with the database from java application
+- Concrete implementation of these methods will be provided by database vendor companies
+
+
+Java App -- > SQL --> Driver[Connector Jar] ------- > Database
+
+# Steps to connect java application to the database:
+1. Create a project [Standalone, web application, enterprise]
+2. Download and add Database connector jar to the project. [ https://mvnrepository.com/artifact/com.mysql/mysql-connector-j/8.0.33 ]
+3. Get Connection
+4. Execute the queries
+5. Get the Result and use it
+6. Close the connection.
+
+
+
+
+1. Get the connection type object:
+
+	Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+
+		- Connection is an interface present in java.sql package
+		- DriverManager is an concrete class present in java.sql package
+		- getConnection() is a static method present in DriverManager class
+		- This method internally returns the object of a subclass[provided by vendor will be present in the 			JAR] that is of type of Connection
+
+2. Get the Statement type object: To execute the queries
+
+	Statement statement = connection.createStatement();
+
+		- Statement is an interface present in java.sql package
+		- createStatement() is a method present in Connection(I) from java.sql package which returns the 			object of Statement type which is provided by vendor.
+
+
+3. Execute the query and store the result with ResultSet type object.
+
+	ResultSet resultSet = statement.executeQuery(QUERY);
+
+		- ResultSet is an interface present in java.sql package
+		- executeQuery() method present in Statement(I) which executes the query and returns the object of type ResultSet.
+
+
+4. Read the rows and columns from the ResultSet object.
+	- resultSet.next() : returns true or false. It will return true till the time we have rows else returns false.
+
+	while( resultSet.next() ) {
+		//we get a row and from row we get the fields
+		resultSet.getXXX(columnIndex or columnName);
+
+		/// print the result, or store the result in object,
+
+	}
+
+
+5. Close the connection: connection.close();
+
+
+
+
+
+# Steps to connect to the database from java application.
+
+1. Load the Driver class provided by the vendor  in the memory. Driver is a class provided by vendor that implements java.sql.Driver interface.
+
+
+- This is optional from java 7 onwards :  Class.forName("com.mysql.jdbc.cj.Driver");
+
+- with this Driver class will be loaded in the memory and after that its' static block will be executed.
+
+	class Driver implements java.sql.Driver {
+		static {
+			DriverManager.registerDriver (new Driver());
+		}
+	}
+- static block will call the registerDriver() by passing the Driver class obejct.
+
+- DriverManager maintains the list of Drivers.
+
+* registerDriver() method will add this Driver class object to the List of Drivers.
+
+
+
+2. Get the connection from DriverManager
+	Connection connection = DriverManager.getConnection(url, username, password);
+
+	- public getConnection will call private getConnection method and will iterate on the List of Drivers.
+	- driver.connect() which will return the object of ConnectionImpl class.
+
+
+3. Get the statement object
+	Statement statement = connection.createStatement(); // will give StatementImpl object
+
+4. Execute the query and store the result with ResultSet object.
+
+	ResultSet resultSet = statement.executeQuery("SQL_QUERY");
+
+5. Read the records from ResultSet object :
+
+	while(resultSet.next()){
+
+		//write logic to get columns from the given row.
+
+		resultSet.getXXX(columnIndex or ColumnName);
+	}
+
+6. close the connection : connection.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
