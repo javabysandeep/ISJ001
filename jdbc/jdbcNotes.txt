@@ -25,16 +25,16 @@
 	- We use anonymous class if the class is used only once
 
 
-# Installations :
+# Installations : 
 1. Mysql Client Software : MySQL Workbench : https://dev.mysql.com/downloads/workbench/
-2. Mysql Server Software: MySQL Community server :https://dev.mysql.com/downloads/mysql/
+2. Mysql Server Software: MySQL Community server :https://dev.mysql.com/downloads/mysql/ 
 
 
 
 
 # File system:
 - to store data on a disk
-- data duplication
+- data duplication 
 - manipulation of data is difficult
 - security is not possible with file system
 - managing permissions, roles on data level is difficult.
@@ -85,12 +85,12 @@
 # To Create a database : CREATE database database_name;
 # Use the database: use database_name;
 # To Create a table :  CREATE TABLE table_name(column_name data_type);
-	e.g.
-
+	e.g. 
+		
 			create table student(
-				id int,
-				name varchar(100),
-				phone varchar(20),
+				id int, 
+				name varchar(100), 
+				phone varchar(20), 
 				email varchar(50),
 				address varchar(100)
 			);
@@ -112,7 +112,7 @@
 
 
 # To update the record : update databaseName.tableName set columnName= newValue WHERE columnName=value;
-	e.g. UPDATE it_shaala.student set name='Sandesh D' where id=101;
+	e.g. UPDATE it_shaala.student set name='Sandesh D' where id=101; 
 
 
 # CRUD Operations
@@ -157,14 +157,14 @@ SELECT * FROM Customers WHERE customerName like '%Y'
 
 
 #WHERE
-=	Equal
->	Greater than
-<	Less than
->=	Greater than or equal
-<=	Less than or equal
-<>	Not equal. Note: In some versions of SQL this operator may be written as !=
-BETWEEN	Between a certain range
-LIKE	Search for a pattern
+=	Equal	
+>	Greater than	
+<	Less than	
+>=	Greater than or equal	
+<=	Less than or equal	
+<>	Not equal. Note: In some versions of SQL this operator may be written as !=	
+BETWEEN	Between a certain range	
+LIKE	Search for a pattern	
 IN	To specify multiple possible values for a column
 
 
@@ -230,7 +230,7 @@ Java App -- > SQL --> Driver[Connector Jar] ------- > Database
 1. Get the connection type object:
 
 	Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-
+		
 		- Connection is an interface present in java.sql package
 		- DriverManager is an concrete class present in java.sql package
 		- getConnection() is a static method present in DriverManager class
@@ -254,13 +254,13 @@ Java App -- > SQL --> Driver[Connector Jar] ------- > Database
 
 4. Read the rows and columns from the ResultSet object.
 	- resultSet.next() : returns true or false. It will return true till the time we have rows else returns false.
-
+	
 	while( resultSet.next() ) {
 		//we get a row and from row we get the fields
 		resultSet.getXXX(columnIndex or columnName);
 
-		/// print the result, or store the result in object,
-
+		/// print the result, or store the result in object, 
+	
 	}
 
 
@@ -292,7 +292,7 @@ Java App -- > SQL --> Driver[Connector Jar] ------- > Database
 
 
 
-2. Get the connection from DriverManager
+2. Get the connection from DriverManager 
 	Connection connection = DriverManager.getConnection(url, username, password);
 
 	- public getConnection will call private getConnection method and will iterate on the List of Drivers.
@@ -316,6 +316,156 @@ Java App -- > SQL --> Driver[Connector Jar] ------- > Database
 	}
 
 6. close the connection : connection.close()
+
+
+
+
+Prequisite : Load and register the Driver [java.sql.Driver(I)] with DriverManager.
+1. Connection
+2. Statement
+3. Execute the query and store the result
+4. close the connection
+
+
+
+
+
+# How the query is processed?
+1. Tokenization
+2. Parsing of Tokens
+3. Query Optimization
+4. Query Execution
+
+
+Statement(I) : 
+	- will perform all the steps every time even though query is same.
+	- Statement is best choice if we are executing different queries everytime.
+	- Statement is worst if we are executing the same query again and again.
+	- Statement is prone to SQL injection. 
+	- Statement is best for static queries.
+
+
+PreparedStatement(I) extends Statement(I) : 
+	- will perform all the steps only once if query is same.
+	- PreparedStatement is worst choice if we are executing different queries everytime.
+	- PreparedStatement is best if we are executing the same query again and again.
+	- PreparedStatement is not prone to SQL injection. 
+	- PreparedStatement is best for dynamic queries.
+
+	compile the query --> set the values for placeholder i.e. ? ----> execute Query
+
+CallableStatement(I) extends PreparedStatement(I):
+	- with the help of CallableStatement we can execute the stored procedures from java application.
+	- Define the stored procedure
+	- call the stored procedure
+	- drop the stored procedure
+	- alter the stored procedure.
+
+
+
+
+Sample stored procedure:
+1. Create: 
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `bulk_insert`()
+BEGIN
+
+insert into course values(101,'Python Core',50);
+insert into course values(102,'Python Advance',50);
+insert into course values(103,'Python Framework',50);
+insert into course values(104,'Python with DSA',50);
+insert into course values(105,'Python with IDE',50);
+insert into course values(106,'Python Django',50);
+
+END
+
+2. call the stored procedure.
+3. drop the stored procedure.
+
+
+
+
+
+
+Assignment 1: PreparedStatement
+
+Student : 
+	1. Add new student
+	2. Edit the student
+	3. Delete the student
+	4. List of All Students
+	5. Search based on name, email, phone
+	6. Bulk edit
+	7. Bulk delete
+	8. Sorted list of students.
+	
+
+Assignment 2: CRUD on  the images, songs, videos in a database
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+Mini Project  - Student Management System - JDBC
+
+
+Requirements : 
+1. User should be able to manipulate the student details efficiently in the system.
+	1. Add new student [Single, Bulk, File Upload]
+	2. Edit the student
+	3. Delete the student
+	4. List of All Students
+	5. Search based on name, email, phone
+	6. Bulk edit
+	7. Bulk delete
+	8. Sorted list of students
+
+
+Soultion : 
+
+	- Storage of data permanently - Database - Table - Columns
+	
+Table - Student
+	Field : id, name, email, phone, address, dob, gender, class, std, division, batch
+	
+student_management_system
+
+CREATE TABLE `student_management_system`.`student` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `phone` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NULL,
+  `address` VARCHAR(45) NULL,
+  `gender` TINYINT NULL,
+  `dob` DATE NULL,
+  `class` VARCHAR(45) NULL,
+  `batch` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);
+
+
+
+2. Create project with proper folder structure.
+
+- JDBC API and the Database vendor jars.
+- To generate getter/setters, constructors on the fly we will use lombook library.
+	- mysql jar: https://mvnrepository.com/artifact/com.mysql/mysql-connector-j/8.0.33
+	- Lombook : https://mvnrepository.com/artifact/org.projectlombok/lombok/1.18.28
+	- excel file : https://mvnrepository.com/artifact/org.apache.poi/poi/5.2.3
+- Folder structure:
+	1. controller layer
+	2. service layer
+	3. dao[Data Access Object] layer
+	4. model/bean/pojo [encapsulated class]
+	5. utility
+	6. dto[Data Transfer Object] Layer
+	
+
+
+
+
+
 
 
 
