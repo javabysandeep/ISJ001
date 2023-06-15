@@ -42,7 +42,7 @@ Lambda Expression:
 	7. Supplier  ---> T get();
 
 # Method Reference 
-
+- it is used to give the reference of an method instead implementing the lambda expression.
 
 
 
