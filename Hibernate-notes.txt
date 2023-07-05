@@ -1,0 +1,86 @@
+Drawbacks of using JDBC
+What is Hibernate?
+Why to use Hibernate?
+# Steps to develop first application with Hibernate
+1. Create the maven project with necessary jars
+	- hibernate core jar
+	- mysql connector jar
+	- lombok
+
+     <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.28</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+        <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.2.1.Final</version>
+        </dependency>
+
+
+
+2. Create the POJO class - Employee
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Builder
+@Entity
+@Table(name = "employee")
+public class Employee {
+    @Id
+//    @Column(name = "employee_id")
+    private int employeeId;
+    private String employeeName;
+    private int employeeSalary;
+}
+
+
+3. Create the configuration file for hibernate [url, username,password, driver]
+
+hibernate.connection.url=jdbc:mysql://localhost:3306/it_shaala
+hibernate.connection.username=root
+hibernate.connection.password=root
+hibernate.connection.driver_class=com.mysql.cj.jdbc.Driver
+
+hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+hibernate.show_sql=true
+hibernate.hbm2ddl.auto=create
+
+4. Create the Main class to save the Employee Object
+
+
+
+  public static void main(String[] args) throws IOException {
+        Properties properties = new Properties();
+        FileInputStream fileInputStream = new FileInputStream("C:\\Work\\ISJ001\\hibernate-001\\src\\main\\resources\\hibernate.config.properties");
+        properties.load(fileInputStream);
+
+        Configuration configuration = new Configuration();
+        configuration.setProperties(properties);
+        configuration.addAnnotatedClass(com.itshaala.Employee.class);
+
+        StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+        SessionFactory sessionFactory = configuration.buildSessionFactory(builder.build());
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        Employee employee = new Employee(1,"Sandesh",10000);
+
+        session.saveOrUpdate(employee);
+
+        transaction.commit();
+        session.close();
+    }

@@ -29,12 +29,10 @@ public class App {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
 
-        Employee employee = Employee.builder()
-                .employeeId(1)
-                .employeeName("Sandeep")
-                .employeeSalary(10000)
-                .build();
+        Employee employee = new Employee(1,"Sandesh",10000);
+
         session.saveOrUpdate(employee);
+
         transaction.commit();
         session.close();
     }
