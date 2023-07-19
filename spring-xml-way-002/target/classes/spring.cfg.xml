@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean class="com.itshaala.Employee" name="employee">
+        <property name="employeeId" value="101"/>
+        <property name="employeeName" value="Sandesh"/>
+        <property name="employeeSalary" value="198000"/>
+    </bean>
+    <bean class="com.itshaala.Employee" name="employee2">
+        <property name="employeeId" value="102"/>
+        <property name="employeeName" value="Priya"/>
+        <property name="employeeSalary" value="320000"/>
+    </bean>
+
+    <bean class="com.itshaala.Product" name="product">
+        <property name="productId">
+            <value>1</value>
+        </property>
+        <property name="productName">
+            <value>Laptop</value>
+        </property>
+        <property name="productPrice">
+            <value>150000</value>
+        </property>
+    </bean>
+
+</beans>
