@@ -1,12 +1,12 @@
 package com.itshaala.beans;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
-@Data
 @NoArgsConstructor
 @ToString
+@AllArgsConstructor
+@Getter
+@Setter
 public class Employee {
     private int employeeId;
     private String employeeName;
