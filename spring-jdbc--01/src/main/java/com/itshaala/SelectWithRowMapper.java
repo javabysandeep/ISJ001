@@ -9,14 +9,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class SelectQuery {
+public class SelectWithRowMapper {
     public static void main(String[] args) {
-        ApplicationContext applicationContext =
-                new AnnotationConfigApplicationContext(SpringPropertiesConfiguration.class);
-        JdbcTemplate jdbcTemplate = applicationContext.getBean("jdbcTemplate1", JdbcTemplate.class);
-        String selectQuery = "SELECT * FROM it_shaala.course";
-
-        //mapping the course row to the course object
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfiguration.class);
+        JdbcTemplate jdbcTemplate = applicationContext.getBean("jdbcTemplate", JdbcTemplate.class);
+        String query = "select * from course";
         RowMapper<Course> rowMapper = (ResultSet rs, int rowNum) -> {
             Course course = new Course();
             course.setId(rs.getInt("id"));
@@ -24,8 +21,8 @@ public class SelectQuery {
             course.setPrice(rs.getInt("price"));
             return course;
         };
-        List<Course> courses = jdbcTemplate.query(selectQuery, rowMapper);
-        for (Course course : courses) {
+        List<Course> courseList = jdbcTemplate.query(query, rowMapper);
+        for (Course course : courseList) {
             System.out.println(course);
         }
     }

@@ -13,7 +13,7 @@ public class InsertQuery {
                 new AnnotationConfigApplicationContext(SpringConfiguration.class);
         JdbcTemplate jdbcTemplate = applicationContext.getBean("jdbcTemplate", JdbcTemplate.class);
         String query = "insert into course values(?,?,?)";
-        jdbcTemplate.update(query, 100, "DevOps with AWS, AZURE", 10000);
+        jdbcTemplate.update(query, 1001, "MERN Stack with Sandesh", 56000);
         System.out.println("inserted into course table");
 
     }
