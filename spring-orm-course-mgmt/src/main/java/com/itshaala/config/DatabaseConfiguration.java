@@ -1,7 +1,6 @@
 package com.itshaala.config;
 
 import com.itshaala.model.Course;
-import org.hibernate.dialect.MySQLDialect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,12 +9,14 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 import java.util.Objects;
 import java.util.Properties;
+
 
 @Configuration
 @PropertySource("application.properties")
@@ -50,11 +51,19 @@ public class DatabaseConfiguration {
         return localSessionFactoryBean;
     }
 
+
     @Bean
     public HibernateTemplate getHibernateTemplate() {
         HibernateTemplate hibernateTemplate = new HibernateTemplate();
         hibernateTemplate.setSessionFactory(getLocalSessionFactoryBean().getObject());
         return hibernateTemplate;
+    }
+
+    @Bean
+    public HibernateTransactionManager getHibernateTransactionManager() {
+        HibernateTransactionManager hibernateTransactionManager = new HibernateTransactionManager();
+        hibernateTransactionManager.setSessionFactory(getLocalSessionFactoryBean().getObject());
+        return hibernateTransactionManager;
     }
 
 }

@@ -1,7 +1,8 @@
 package com.itshaala.model;
 
-import jakarta.persistence.*;
 import lombok.*;
+
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -9,7 +10,7 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "course")
+@Table(name = "course1")
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

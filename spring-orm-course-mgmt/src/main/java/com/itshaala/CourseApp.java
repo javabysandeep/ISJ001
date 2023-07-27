@@ -6,8 +6,6 @@ import com.itshaala.model.Course;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.List;
-
 /**
  * Hello world!
  */
