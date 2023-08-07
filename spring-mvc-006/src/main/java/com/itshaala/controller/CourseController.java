@@ -49,7 +49,7 @@ public class CourseController {
 
 
     @PostMapping
-    public ModelAndView addCourse(@RequestBody Course course) {
+    public ModelAndView addCourse(@ModelAttribute Course course) {
         courseList.add(course);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("courseListing");

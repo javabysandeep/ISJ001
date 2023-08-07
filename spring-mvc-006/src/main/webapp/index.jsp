@@ -2,7 +2,7 @@
 <body>
 <h2>Course Management App!</h2>
 
-<form action="/app/course" method="post">
+<form action="http://localhost:8080/app/course" method="post">
     <table style="border-width: 10px">
         <tr>
             <td>Course Id:</td>

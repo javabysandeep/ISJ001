@@ -6,33 +6,6 @@
     <title>Course Listing</title>
 </head>
 <body>
-<table style="border-width: 10px">
-    <tr>
-        <th>Course ID</th>
-        <th>Course Name</th>
-        <th>Course Price</th>
-        <th>Course Description</th>
-    </tr>
-    <%
-        List<Course> courseList = (List<Course>) request.getAttribute("courses");
-        for (Course course : courseList) {
-
-    %>
-    <tr>
-        <td><%=course.getCourseId()%>
-        </td>
-        <td><%=course.getCourseName()%>
-        </td>
-        <td><%=course.getCoursePrice()%>
-        </td>
-        <td><%=course.getCourseDescription()%>
-        </td>
-    </tr>
-
-    <%
-
-        }
-    %>
-</table>
+${courses}
 </body>
 </html>
