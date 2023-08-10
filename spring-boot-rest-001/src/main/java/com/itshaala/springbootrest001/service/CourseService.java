@@ -18,6 +18,7 @@ public class CourseService {
     }
 
     public Course findByCourseId(int courseId) {
+
         return (Course) courseDao.findAllById(Collections.singleton(Integer.valueOf(courseId)));
     }
 

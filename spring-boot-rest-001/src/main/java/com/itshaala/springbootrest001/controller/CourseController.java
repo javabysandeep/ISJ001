@@ -7,18 +7,17 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/course/")
+@RestController
 public class CourseController {
     @Autowired
     CourseService courseService;
 
-    // @RequestMapping(value = "/courses", method = RequestMethod.GET)
-    @GetMapping
+    @GetMapping("/course")
     public List<Course> getAllCourses() {
         return courseService.getAllCourses();
     }
 
-    @GetMapping("${courseId}")
+    @GetMapping("/course/{courseId}")
     public Course findByCourseId(@PathVariable int courseId) {
         return courseService.findByCourseId(courseId);
     }
