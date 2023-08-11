@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome File</title>
+</head>
+<body>
+Get All Courses : <a href="http://localhost:8080/courses"> Get All Courses </a>
+
+<form action="http://localhost:8080/courses" method="post" content="application/x-www-form-urlencoded">
+    <table>
+        <tr>
+            <td>Enter Course ID</td>
+            <td><input type="number" name="courseId"></td>
+        </tr>
+        <tr>
+            <td>Enter Course Name</td>
+            <td><input type="text" name="courseName"></td>
+        </tr>
+        <tr>
+            <td>Enter Course Price</td>
+            <td><input type="number" name="coursePrice"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Add Course"></td>
+        </tr>
+
+    </table>
+
+</form>
+</body>
+</html>

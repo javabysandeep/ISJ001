@@ -3,6 +3,7 @@ package com.itshaala.springbootrest002.controller;
 import com.itshaala.springbootrest002.model.Course;
 import com.itshaala.springbootrest002.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,8 +29,17 @@ public class CourseController {
         return "Course deleted successfully";
     }
 
-    @PostMapping("/courses")
-    public Course createCourse(@RequestBody Course course) {
+    @PostMapping(value = "/courses", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE,
+            produces = {
+                    MediaType.APPLICATION_ATOM_XML_VALUE,
+                    MediaType.APPLICATION_JSON_VALUE
+            })
+    public Course createCourse(Course course) {
+        return courseService.createCourse(course);
+    }
+
+    @PutMapping("/courses")
+    public Course updateCourse(@RequestBody Course course) {
         return courseService.createCourse(course);
     }
 
